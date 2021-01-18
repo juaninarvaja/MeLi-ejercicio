@@ -15,7 +15,7 @@ FrontEndTestPractico
   
   ○ Express
 
-Como iniciar el proyecto
+#Como iniciar el proyecto
 
 Abrir una consola y ejecutar
 
