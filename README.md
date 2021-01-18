@@ -2,9 +2,13 @@
  
 FrontEndTestPractico
 ● Cliente:
+
   ○ HTML 
+  
   ○ JS (React) 
+  
   ○ CSS 
+  
 ● Servidor:
   ○ Node >= 6 
   ○ Express
