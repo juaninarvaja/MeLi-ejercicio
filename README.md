@@ -1,7 +1,13 @@
 # MeLi-ejercicio
  
 FrontEndTestPractico
-● Cliente: ○ HTML ○ JS (React) ○ CSS ● Servidor: ○ Node >= 6 ○ Express
+● Cliente:
+  ○ HTML 
+  ○ JS (React) 
+  ○ CSS 
+● Servidor:
+  ○ Node >= 6 
+  ○ Express
 
 Como iniciar el proyecto
 Abrir una consola y ejecutar
