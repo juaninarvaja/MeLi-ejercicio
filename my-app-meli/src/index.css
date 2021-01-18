@@ -5,9 +5,40 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #eeeeee;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.barra-superior{
+  background-color: #FFE600;
+  padding-bottom: 5px;
+}
+.imagen-meli{
+  margin-top: 5px;
+  width: 40px;
+  margin-right: 32px;
+}
+.input-search{
+  font-size: 16px;
+  margin-top: 5px;
+  padding: 5px;
+  width: 90vh;
+  border:none;
+  border-radius: 2px;
+}
+.imagen-lupa{
+  margin-top: 6px;
+  height: 15px;
+  width: 15px;
+ 
+}
+.div-lupa{
+  background-color: #eeeeee;
+  height: 29px;
+  width: 28px;
+  margin-top: 5px;
 }
