@@ -43,10 +43,20 @@ function Detalles() {
                          </div>
                         </Col>
                         <Col xs={3}>
-                        <h3>{detalles.title}</h3>
+                            {detalles.condition === "new" && <h6 className="detalle-estado-vendidos">Nuevo - {detalles.sold_quantity} vendidos</h6>}
+                            {detalles.condition === "used" && <h6 className="detalle-estado-vendidos">Usado - {detalles.sold_quantity} vendidos</h6>}
+                            <h3 className="detalle-titulo">{detalles.title}</h3>
+                            {detalles?.price?.currency === "ARS" &&  <h2 className="detalle-precio">$ {detalles?.price?.amount}</h2>} 
+                            {detalles?.price?.currency === "USD" &&  <h2 className="detalle-precio">U$S{detalles?.price?.amount}</h2>}
+                            <button className="boton-comprar ">Comprar</button> 
                         </Col>
                     </Row>
-
+                    <div className="div-detalle-descripcion">
+                    {detalles?.description?.split('\n').map((item,key) => (
+                            (key === 0) ? (<h2 className="detalle-descripcion-titulo" key={key}>{item}</h2>) :  (<h5 key={key} className="detalle-descripcion-cuerpo">{item}</h5>)
+ 
+                            ))}
+                            </div>
     
                
                 </div>

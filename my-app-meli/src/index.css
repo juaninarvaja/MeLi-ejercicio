@@ -111,10 +111,55 @@ code {
 .div-detalles{
   margin-top:46px ;
   background-color: white;
+  text-align: left;
+  margin-bottom: 64px;
+  padding-bottom: 32px;
+  padding-right: 32px;
 }
 .imagen-detalle{
-  /* margin: 16px; */
   width: 680px;
   height: 680px;
 
+}
+.detalle-estado-vendidos{
+  margin-top: 32px;
+  margin-bottom: 16px;
+  font-size:14px;
+  font-weight: normal;
+}
+.detalle-titulo{
+  font-size:24px;
+  margin-top: 0px;
+  margin-bottom: 32px;
+  color: #333333;
+}
+.detalle-precio{
+  font-size: 46px;
+  color: #333333;
+   margin-top: 0px;
+  margin-bottom: 32px;
+}
+.detalle-descripcion-titulo{
+  font-size: 28px;
+  color: #333333;
+  margin-bottom: 32px;
+}
+.detalle-descripcion-cuerpo{
+  font-size: 16px;
+  color: #333333;
+  font-weight: normal;
+  margin:4px;
+}
+.div-detalle-descripcion{
+  margin-left: 32px;
+}
+.boton-comprar{
+  background-color: #3483FA;
+  color:white;
+  border: none;
+ 
+  width: 100%;
+  padding:7px;
+  border-radius: 4px;
+ 
 }
