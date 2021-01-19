@@ -48,7 +48,7 @@ async function obtenerDescripcion(id){
             "currency": element.currency_id,
             "amount": element.price,
             },
-            "picture": element.thumbnail,
+            "picture": element.pictures[0].url,
             "condition": element.condition,
             "free_shipping": element.shipping.free_shipping,
             "sold_quantity":element.sold_quantity,

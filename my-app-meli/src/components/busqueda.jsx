@@ -1,13 +1,25 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import {  Grid ,  Row ,  Col  } from 'react-flexbox-grid' ; 
 
-function Busqueda() {
+function Busqueda({historial}) {
 
     let [query, setQuery] = useState("");
 
+    useEffect(() => {
+        if(historial !== "" && historial !== undefined){
+            setQuery(historial);
+        }
+    
+    },[])
+
 
     const buscar=( )=>{
-        console.log("buscando " + query );
+        if(query !== ""){
+            console.log("buscando " + query );
+             window.location.href = '/items?search=' + query;
+        
+        }
+        
       }
 
   return (
@@ -15,16 +27,16 @@ function Busqueda() {
       <Grid>
         <Row className="rowCabecera">
         
-          <Col xs={2}  onClick={event =>  window.location.href='/'} >
-            <div >
+          <Col xs={1} className= "div-imagen-meli" onClick={event =>  window.location.href='/'} >
+           
               <img className= "imagen-meli" src="/assets/meli.png"></img>
-            </div>
+           
  
           </Col>
-          <Col xs={9}>
+          <Col xs={11}>
           <Row>
           <Col> 
-          <input type="text" className= "input-search" placeholder="Nunca dejes de buscar"  onChange = {(e) => {setQuery(e.target.value)}}
+          <input type="text" className= "input-search" placeholder="Nunca dejes de buscar"  value={query} onChange = {(e) => {setQuery(e.target.value)}}
            onKeyPress={(ev) => {
             if (ev.key === 'Enter') {
               buscar();

@@ -8,6 +8,7 @@ var logger = require('morgan');
 // var usersRouter = require('./routes/users');
 var items = require('./routes/items');
 var detalle = require('./routes/detalle');
+var cors = require('cors');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
+app.use(cors());
 app.use('/', detalle);
 app.use('/', items);
 
