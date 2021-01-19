@@ -3,11 +3,12 @@ var router = express.Router();
 const fetch = require("node-fetch");
 
 
-/* GET home page. */
+ /**
+  * Esta api devuelve los detalles del item del cual erecibe su id por parametro
+  * 
+  */
  router.get('/api/items/:id', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
 
-    //  res.json({"id":req.params.id});
 
      fetch("https://api.mercadolibre.com/items/"+req.params.id, { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'})
      .then(function (response) {
@@ -25,6 +26,12 @@ const fetch = require("node-fetch");
     
 });
 
+
+/**
+ * Esta funcion consulta la descripcion a otra url mientras corre el programa 
+ * @param {*} id el id del item para poder consultar su descripcion
+ * @returns retorna la descripcion del item coincidente con el  id brindado
+ */
 async function obtenerDescripcion(id){
   var descripcion = await fetch("https://api.mercadolibre.com/items/"+id + "/description", { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'})
   .then(function (response) {
@@ -38,6 +45,12 @@ async function obtenerDescripcion(id){
   })
    return descripcion;
 }
+
+/**
+ * Esta funcion recibe un elemento item y filtra los parametros que son necesarios para la resolucion del ejercicio
+ * @param {*} element Un elemento item   tal como lo devuelve la api
+ * @returns retorna un JSON con la informacion del detalle del item
+ */
  async function filtrarDetalles(element){
 
         var description = await obtenerDescripcion(element.id);

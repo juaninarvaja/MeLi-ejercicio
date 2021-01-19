@@ -3,11 +3,12 @@ var router = express.Router();
 const fetch = require("node-fetch");
 
 
-/* GET home page. */
-router.get('/api/items', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
+/**
+ * Esta api recibe por query una consulta,
+ *  la busca en MeLi y retorna los 4 primeros resultados (solo con los datos pedidos)
+ */
 
-     
+router.get('/api/items', function(req, res, next) {
 
      fetch("https://api.mercadolibre.com/sites/MLA/search?q="+req.query.q, { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'})
      .then(function (response) {
@@ -30,7 +31,11 @@ router.get('/api/items', function(req, res, next) {
       });
     
 });
-
+/**
+ * ESta funcion recibe los filtros y los ordena en un arreglo de mas general a mas especifico
+ * @param {*} filtros  el filtro con mas resultados de la busqueda realizada
+ * @returns retorna un arreglo de String, q representan los filtros
+ */
 function obtenerCategorias(filtros){
     // console.log(filtros);
     var categorias = [];
@@ -44,6 +49,12 @@ function obtenerCategorias(filtros){
     }
     return categorias;
 }
+
+/**
+ * Esta funcion recibe un array de items, recorta los primeros 4  yfiltra los parametros que son necesarios
+ * @param {*} results Los resultados de la respuesta de la api 
+ * @returns retorna un arreglo de JSONs con la informacion de cada item
+ */
 function filtrarItems(results){
 
     var arrayItems = [];
