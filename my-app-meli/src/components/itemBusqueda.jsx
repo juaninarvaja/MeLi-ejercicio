@@ -18,10 +18,15 @@ function ItemBusqueda({item}) {
               <Row>
                   
                   <Col xs={2} >
-                  {item.price.currency === "ARS" &&  <h2 className="item-precio">$ {item.price.amount}</h2>} 
-                  {item.price.currency === "USD" &&  <h2 className="item-precio">U$S{item.price.amount}</h2>} 
+                    <Row>
+                    {item.price.currency === "ARS" &&  <h2 className="item-precio">$ {item.price.amount}</h2>} 
+                    {item.price.currency === "USD" &&  <h2 className="item-precio">U$S{item.price.amount}</h2>} 
+                    {item.free_shipping && <div className= "div-imagen-envio" ><img className= "imagen-envio" alt="Posee envio gratis" src="/assets/envio.png"></img></div> }
+                    </Row>
+                  {/* {item.price.currency === "ARS" &&  <h2 className="item-precio">$ {item.price.amount}</h2>} 
+                  {item.price.currency === "USD" &&  <h2 className="item-precio">U$S{item.price.amount}</h2>}  */}
                     </Col>
-                  <Col xs={1}> <div className= "div-imagen-envio" ><img className= "imagen-envio" alt="Posee envio gratis" src="/assets/envio.png"></img></div></Col>
+                  {/* <Col xs={1}> {item.free_shipping && <div className= "div-imagen-envio" ><img className= "imagen-envio" alt="Posee envio gratis" src="/assets/envio.png"></img></div> }</Col> */}
                   <Col xs={6}></Col>
                   <Col xs={3}><h5 className= "estado-ventedor-item">{item.state}</h5></Col>
               </Row>
