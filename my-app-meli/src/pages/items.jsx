@@ -1,11 +1,11 @@
 import React,{useState, useEffect} from 'react';
-import {  Grid ,  Row ,  Col  } from 'react-flexbox-grid' ;
-import { useParams  } from 'react-router-dom'; 
+import { Row ,  Col  } from 'react-flexbox-grid' ;
+
 import Busqueda from '../components/busqueda';
 import ItemBusqueda from '../components/itemBusqueda';
 
 function Items() {
-    // let { query } = useParams(); 
+
 
     let [items, setItems] = useState([]);
     let [categorias, setCategorias] = useState([]);

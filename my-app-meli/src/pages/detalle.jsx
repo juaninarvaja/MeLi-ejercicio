@@ -2,16 +2,14 @@ import React,{useState, useEffect} from 'react';
 import {  Grid ,  Row ,  Col  } from 'react-flexbox-grid' ;
 import { useParams  } from 'react-router-dom'; 
 import Busqueda from '../components/busqueda';
-import ItemBusqueda from '../components/itemBusqueda';
+
 
 function Detalles() {
     let { id } = useParams(); 
 
     let [detalles, setDetalles] = useState([]);
 
-    const search = window.location.search;
-    const params = new URLSearchParams(search);
-    const busqueda = params.get('search');
+
 
     useEffect(() => {
         fetch("http://localhost:3000/api/items/"+id, { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json'})
@@ -39,7 +37,7 @@ function Detalles() {
                     <Row>
                         <Col xs={9}>
                         <div >
-                        <img className= "imagen-detalle" src={detalles.picture}></img>
+                        <img className= "imagen-detalle" src={detalles.picture} alt="Imagen del producto"></img>
                          </div>
                         </Col>
                         <Col xs={3}>

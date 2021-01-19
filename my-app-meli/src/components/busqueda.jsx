@@ -29,7 +29,7 @@ function Busqueda({historial}) {
         
           <Col xs={1} className= "div-imagen-meli" onClick={event =>  window.location.href='/'} >
            
-              <img className= "imagen-meli" src="/assets/meli.png"></img>
+              <img className= "imagen-meli" src="/assets/meli.png" alt="Logo mercado Libre"></img>
            
  
           </Col>
@@ -44,7 +44,7 @@ function Busqueda({historial}) {
           }}></input>
           
          </Col> 
-          <Col> <div className= "div-lupa" onClick={event => buscar()}><img className= "imagen-lupa" src="/assets/lupa.png"></img></div> </Col>
+          <Col> <div className= "div-lupa" onClick={event => buscar()}><img className= "imagen-lupa" alt="Lupa de busqueda" src="/assets/lupa.png"></img></div> </Col>
           </Row>
           </Col>
           
